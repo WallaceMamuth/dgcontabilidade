@@ -1,4 +1,5 @@
 import { ArrowRight, BarChart3, CheckCircle2, ShieldCheck } from 'lucide-react'
+import BrandLogoMark from './BrandLogoMark.jsx'
 
 function Hero({ logoUrl, whatsappUrl }) {
   return (
@@ -69,13 +70,11 @@ function Hero({ logoUrl, whatsappUrl }) {
           <div className="rounded-3xl bg-[#064E3B] p-6 text-white shadow-xl shadow-emerald-950/20">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-5">
-                <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-transparent sm:h-36 sm:w-36 lg:h-40 lg:w-40">
-                  <img
-                    src={logoUrl}
-                    alt="Logo da DG Contabilidade"
-                    className="h-32 w-32 object-contain drop-shadow-md sm:h-36 sm:w-36 lg:h-40 lg:w-40"
-                  />
-                </div>
+                <BrandLogoMark
+                  logoUrl={logoUrl}
+                  alt="Logo da DG Contabilidade"
+                  variant="hero"
+                />
                 <div className="min-w-0 text-center sm:text-left">
                   <p className="text-sm text-emerald-100">Painel contábil</p>
                   <p className="mt-1 text-2xl font-bold">DG Contabilidade</p>

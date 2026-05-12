@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import BrandLogoMark from './BrandLogoMark.jsx'
 
 const navLinks = [
   { label: 'Início', href: '#inicio' },
@@ -22,15 +23,9 @@ function Navbar({ logoUrl, whatsappUrl }) {
         <a
           href="#inicio"
           onClick={closeMenu}
-          className="flex items-center gap-3 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
+          className="flex items-center gap-3.5 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4 sm:gap-4"
         >
-          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-transparent sm:h-20 sm:w-20">
-            <img
-              src={logoUrl}
-              alt=""
-              className="h-16 w-16 object-contain drop-shadow-sm sm:h-20 sm:w-20"
-            />
-          </span>
+          <BrandLogoMark logoUrl={logoUrl} variant="nav" />
           <span className="text-lg font-bold tracking-tight text-[#064E3B]">
             DG Contabilidade
           </span>
