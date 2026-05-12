@@ -66,8 +66,8 @@ function Hero({ logoUrl, whatsappUrl }) {
           </div>
         </div>
 
-        <div className="animate-fade-up rounded-4xl border border-white/70 bg-white/80 p-5 shadow-2xl shadow-emerald-950/10 backdrop-blur lg:p-7">
-          <div className="rounded-3xl bg-[#064E3B] p-6 text-white shadow-xl shadow-emerald-950/20">
+        <div className="animate-fade-up rounded-4xl border-2 border-[#FFFFFF] bg-white/80 p-5 shadow-none backdrop-blur lg:p-7">
+          <div className="rounded-3xl border-2 border-[#FFFFFF] bg-[#064E3B] p-6 text-white shadow-none">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-5">
                 <BrandLogoMark
@@ -93,7 +93,7 @@ function Hero({ logoUrl, whatsappUrl }) {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-2xl bg-white/10 p-4 ring-1 ring-white/15"
+                  className="rounded-2xl border border-[#FFFFFF] bg-white/10 p-4 shadow-none"
                 >
                   <p className="text-sm text-emerald-100">{label}</p>
                   <p className="mt-1 text-2xl font-bold">{value}</p>
@@ -102,7 +102,7 @@ function Hero({ logoUrl, whatsappUrl }) {
             </div>
           </div>
 
-          <div className="mt-5 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="mt-5 rounded-3xl border border-slate-200 bg-white p-5 shadow-none">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
               Organização financeira
             </p>

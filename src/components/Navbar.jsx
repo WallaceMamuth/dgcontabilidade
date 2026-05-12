@@ -15,7 +15,7 @@ function Navbar({ logoUrl, whatsappUrl }) {
   const closeMenu = () => setIsOpen(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-emerald-950/10 bg-white/90 shadow-sm shadow-emerald-950/5 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 overflow-visible border-b-2 border-[#FFFFFF] bg-white/90 backdrop-blur-xl">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8"
         aria-label="Navegação principal"
@@ -23,7 +23,7 @@ function Navbar({ logoUrl, whatsappUrl }) {
         <a
           href="#inicio"
           onClick={closeMenu}
-          className="flex items-center gap-3.5 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4 sm:gap-4"
+          className="flex min-h-0 items-center gap-3 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
         >
           <BrandLogoMark logoUrl={logoUrl} variant="nav" />
           <span className="text-lg font-bold tracking-tight text-[#064E3B]">
