@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Contato', href: '#contato' },
 ]
 
-function Navbar({ logoUrl, whatsappUrl }) {
+function Navbar({ logoUrl }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const closeMenu = () => setIsOpen(false)
@@ -31,8 +31,8 @@ function Navbar({ logoUrl, whatsappUrl }) {
           </span>
         </a>
 
-        <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 self-stretch md:flex lg:gap-5">
-          <div className="flex min-w-0 items-center gap-3 sm:gap-4 lg:gap-8">
+        <div className="hidden min-w-0 flex-1 items-center justify-end self-stretch md:flex">
+          <div className="flex items-center gap-3 sm:gap-4 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -43,14 +43,6 @@ function Navbar({ logoUrl, whatsappUrl }) {
               </a>
             ))}
           </div>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex shrink-0 items-center justify-center self-center rounded-full bg-[#064E3B] px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-white shadow-lg shadow-emerald-950/15 transition duration-300 hover:-translate-y-0.5 hover:bg-[#0b624b] focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4 sm:px-5 sm:py-3"
-          >
-            Fale conosco
-          </a>
         </div>
 
         <div className="flex items-center self-stretch md:hidden">
@@ -83,15 +75,6 @@ function Navbar({ logoUrl, whatsappUrl }) {
                 {link.label}
               </a>
             ))}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeMenu}
-              className="mt-2 rounded-2xl bg-[#064E3B] px-4 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-emerald-950/15 transition hover:bg-[#0b624b] focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-2"
-            >
-              Fale conosco
-            </a>
           </div>
         </div>
       )}

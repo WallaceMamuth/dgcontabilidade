@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-700">
-      <Navbar logoUrl={logoUrl} whatsappUrl={whatsappUrl} />
+      <Navbar logoUrl={logoUrl} />
       <main>
         <Hero logoUrl={logoUrl} whatsappUrl={whatsappUrl} />
         <Services />
