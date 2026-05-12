@@ -14,8 +14,8 @@ function InstagramIcon(props) {
 function Footer({ logoUrl }) {
   return (
     <footer id="contato" className="bg-slate-950 px-5 py-12 text-slate-300 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1fr_1.25fr] md:items-start">
-        <div>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 md:flex-row md:items-start md:justify-center md:gap-12 lg:gap-16">
+        <div className="mx-auto w-full max-w-md md:mx-0 md:shrink-0">
           <div className="flex items-center gap-3">
             <BrandLogoMark logoUrl={logoUrl} variant="footer" />
             <span className="text-lg font-bold tracking-tight text-white">
@@ -35,7 +35,7 @@ function Footer({ logoUrl }) {
           </a>
         </div>
 
-        <address className="grid gap-5 not-italic">
+        <address className="mx-auto grid w-full max-w-md gap-5 not-italic md:mx-0 md:shrink-0 lg:max-w-lg">
           <a
             href="mailto:denilsongcontabilidade@gmail.com"
             className="flex gap-4 rounded-3xl border border-white/10 bg-white/3 p-5 transition hover:border-sky-300/40 hover:bg-white/6 focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-950"
@@ -66,7 +66,7 @@ function Footer({ logoUrl }) {
         </address>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <p>© {new Date().getFullYear()} DG Contabilidade. Todos os direitos reservados.</p>
         <p>
           Desenvolvido por{' '}

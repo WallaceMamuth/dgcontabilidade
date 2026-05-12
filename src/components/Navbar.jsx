@@ -31,26 +31,27 @@ function Navbar({ logoUrl, whatsappUrl }) {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 self-stretch md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-[#064E3B] focus-visible:rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="hidden min-w-0 flex-1 items-center justify-end gap-3 self-stretch md:flex lg:gap-5">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4 lg:gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="shrink-0 text-sm font-medium whitespace-nowrap text-slate-600 transition hover:text-[#064E3B] focus-visible:rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center justify-center self-center rounded-full bg-[#064E3B] px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-white shadow-lg shadow-emerald-950/15 transition duration-300 hover:-translate-y-0.5 hover:bg-[#0b624b] focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4 sm:px-5 sm:py-3"
+          >
+            Fale conosco
+          </a>
         </div>
-
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="hidden items-center self-stretch rounded-full bg-[#064E3B] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-950/15 transition duration-300 hover:-translate-y-0.5 hover:bg-[#0b624b] focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4 md:inline-flex"
-        >
-          Fale conosco
-        </a>
 
         <div className="flex items-center self-stretch md:hidden">
           <button
