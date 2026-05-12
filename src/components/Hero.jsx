@@ -69,11 +69,11 @@ function Hero({ logoUrl, whatsappUrl }) {
           <div className="rounded-3xl bg-[#064E3B] p-6 text-white shadow-xl shadow-emerald-950/20">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-white to-slate-100 shadow-lg ring-1 ring-white/40">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-transparent">
                   <img
                     src={logoUrl}
                     alt="Logo da DG Contabilidade"
-                    className="h-full w-full object-contain p-1.5"
+                    className="h-16 w-16 object-contain drop-shadow-md"
                   />
                 </div>
                 <div>

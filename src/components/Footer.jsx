@@ -16,11 +16,11 @@ function Footer({ logoUrl }) {
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1fr_1.25fr] md:items-start">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-slate-100 to-white shadow-lg ring-1 ring-white/15">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-transparent">
               <img
                 src={logoUrl}
                 alt=""
-                className="h-full w-full object-contain p-1.5"
+                className="h-12 w-12 object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
               />
             </span>
             <span className="text-lg font-bold tracking-tight text-white">
