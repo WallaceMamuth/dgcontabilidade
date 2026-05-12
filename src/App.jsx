@@ -1,9 +1,9 @@
-import { MessageCircle } from 'lucide-react'
 import About from './components/About.jsx'
 import Footer from './components/Footer.jsx'
 import Hero from './components/Hero.jsx'
 import Navbar from './components/Navbar.jsx'
 import Services from './components/Services.jsx'
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton.jsx'
 
 function App() {
   const whatsappUrl =
@@ -19,18 +19,7 @@ function App() {
         <About whatsappUrl={whatsappUrl} />
       </main>
       <Footer logoUrl={logoUrl} />
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Fale com a DG Contabilidade pelo WhatsApp"
-        className="group fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl shadow-emerald-900/25 transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-[#1fb85a] focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-4"
-      >
-        <MessageCircle
-          aria-hidden="true"
-          className="h-7 w-7 transition duration-300 group-hover:rotate-6"
-        />
-      </a>
+      <WhatsAppFloatingButton href={whatsappUrl} />
     </div>
   )
 }
