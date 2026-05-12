@@ -1,9 +1,15 @@
 """
-Remove outer black / white matte from logo PNG via edge flood-fill.
-Keeps the silver disc and black typography inside (not connected to image border).
+Logo da marca em public/brand/logo-dg-contabilidade.png
+
+- Sem argumentos: remove moldura preta/branca opaca (flood-fill a partir das bordas).
+- Com caminho de arquivo: copia esse PNG para public/brand/logo-dg-contabilidade.png
+  e, por padrão, aplica o mesmo tratamento. Use --no-matte se o PNG já tiver alpha limpo
+  (ex.: export do remove.bg / ChatGPT com transparência real).
 """
 from __future__ import annotations
 
+import argparse
+import shutil
 import sys
 from collections import deque
 from pathlib import Path
@@ -12,13 +18,12 @@ import numpy as np
 from PIL import Image
 
 
-def is_edge_matte(r: int, g: int, b: int, a: int) -> bool:
-    if a < 12:
-        return True
-    # Near-black frame
+def is_matte_pixel(r: int, g: int, b: int, a: int) -> bool:
+    """Pixels opacos da moldura externa (preto ou branco), não atravessa transparência."""
+    if a < 200:
+        return False
     if r < 55 and g < 55 and b < 55:
         return True
-    # Near-white outer ring
     if r > 235 and g > 235 and b > 235:
         return True
     return False
@@ -34,7 +39,7 @@ def flood_transparent(rgba: np.ndarray) -> np.ndarray:
         if y < 0 or y >= h or x < 0 or x >= w or visited[y, x]:
             return
         r, g, b, a = out[y, x]
-        if not is_edge_matte(int(r), int(g), int(b), int(a)):
+        if not is_matte_pixel(int(r), int(g), int(b), int(a)):
             return
         visited[y, x] = True
         q.append((y, x))
@@ -54,7 +59,7 @@ def flood_transparent(rgba: np.ndarray) -> np.ndarray:
             if ny < 0 or ny >= h or nx < 0 or nx >= w or visited[ny, nx]:
                 continue
             r, g, b, a = out[ny, nx]
-            if not is_edge_matte(int(r), int(g), int(b), int(a)):
+            if not is_matte_pixel(int(r), int(g), int(b), int(a)):
                 continue
             visited[ny, nx] = True
             q.append((ny, nx))
@@ -63,17 +68,46 @@ def flood_transparent(rgba: np.ndarray) -> np.ndarray:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Atualiza logo em public/brand/")
+    parser.add_argument(
+        "source",
+        nargs="?",
+        help="PNG de origem (copia para public/brand/logo-dg-contabilidade.png)",
+    )
+    parser.add_argument(
+        "--no-matte",
+        action="store_true",
+        help="Não aplicar flood-fill (use com PNG já transparente)",
+    )
+    args = parser.parse_args()
+
     root = Path(__file__).resolve().parents[1]
-    path = root / "public" / "brand" / "logo-dg-contabilidade.png"
-    if not path.exists():
-        print(f"Missing file: {path}", file=sys.stderr)
+    dest = root / "public" / "brand" / "logo-dg-contabilidade.png"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+
+    if args.source:
+        src = Path(args.source).expanduser().resolve()
+        if not src.is_file():
+            print(f"Arquivo não encontrado: {src}", file=sys.stderr)
+            return 1
+        shutil.copy2(src, dest)
+        print(f"Copiado: {src} -> {dest}")
+
+    if not dest.is_file():
+        print(f"Missing file: {dest}", file=sys.stderr)
         return 1
 
-    img = Image.open(path).convert("RGBA")
+    if args.no_matte:
+        img = Image.open(dest).convert("RGBA")
+        img.save(dest, optimize=True)
+        print(f"Salvo (sem matte): {dest}")
+        return 0
+
+    img = Image.open(dest).convert("RGBA")
     arr = np.array(img)
     arr = flood_transparent(arr)
-    Image.fromarray(arr, "RGBA").save(path, optimize=True)
-    print(f"Updated {path}")
+    Image.fromarray(arr, "RGBA").save(dest, optimize=True)
+    print(f"Atualizado (moldura removida): {dest}")
     return 0
 
 
