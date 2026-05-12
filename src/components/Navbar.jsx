@@ -17,7 +17,7 @@ function Navbar({ logoUrl, whatsappUrl }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 overflow-visible border-b-2 border-[#FFFFFF] bg-white/90 backdrop-blur-xl">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8"
+        className="mx-auto box-border flex min-h-[5.5rem] max-h-[5.5rem] max-w-7xl items-center justify-between px-5 py-4 sm:min-h-[5.75rem] sm:max-h-[5.75rem] sm:px-6 lg:px-8"
         aria-label="Navegação principal"
       >
         <a
@@ -26,7 +26,7 @@ function Navbar({ logoUrl, whatsappUrl }) {
           className="flex min-h-0 items-center gap-3 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
         >
           <BrandLogoMark logoUrl={logoUrl} variant="nav" />
-          <span className="text-lg font-bold tracking-tight text-[#064E3B]">
+          <span className="min-w-0 truncate text-lg font-bold tracking-tight text-[#064E3B] sm:overflow-visible sm:whitespace-normal">
             DG Contabilidade
           </span>
         </a>
