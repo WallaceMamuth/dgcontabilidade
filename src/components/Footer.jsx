@@ -66,9 +66,19 @@ function Footer({ logoUrl }) {
         </address>
       </div>
 
-      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-slate-500">
-        © {new Date().getFullYear()} DG Contabilidade. Todos os direitos
-        reservados.
+      <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <p>© {new Date().getFullYear()} DG Contabilidade. Todos os direitos reservados.</p>
+        <p>
+          Desenvolvido por{' '}
+          <a
+            href="https://www.watechevoce.com.br"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-slate-400 underline decoration-slate-600 underline-offset-4 transition hover:text-sky-300 hover:decoration-sky-300 focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+          >
+            W.A.Techevoce
+          </a>
+        </p>
       </div>
     </footer>
   )

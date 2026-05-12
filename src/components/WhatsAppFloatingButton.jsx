@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+
+const FOOTER_OBSERVE_ID = 'contato'
+
 function WhatsAppIcon({ className }) {
   return (
     <svg
@@ -12,6 +16,23 @@ function WhatsAppIcon({ className }) {
 }
 
 function WhatsAppFloatingButton({ href }) {
+  const [footerInView, setFooterInView] = useState(false)
+
+  useEffect(() => {
+    const footer = document.getElementById(FOOTER_OBSERVE_ID)
+    if (!footer) return undefined
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFooterInView(entry.isIntersecting)
+      },
+      { root: null, rootMargin: '0px', threshold: 0 },
+    )
+
+    observer.observe(footer)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <a
       href={href}
@@ -19,7 +40,13 @@ function WhatsAppFloatingButton({ href }) {
       rel="noreferrer"
       title="WhatsApp"
       aria-label="Fale com a DG Contabilidade pelo WhatsApp"
-      className="group fixed bottom-5 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.45),0_2px_10px_rgba(0,0,0,0.18)] ring-[3px] ring-white/25 transition duration-300 hover:-translate-y-1 hover:scale-[1.06] hover:bg-[#20bd5c] hover:shadow-[0_12px_36px_rgba(37,211,102,0.55),0_4px_14px_rgba(0,0,0,0.22)] hover:ring-white/40 active:scale-100 focus-visible:ring-4 focus-visible:ring-[#25D366] focus-visible:ring-offset-4 focus-visible:ring-offset-slate-50"
+      aria-hidden={footerInView}
+      tabIndex={footerInView ? -1 : undefined}
+      className={`group fixed bottom-5 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.45),0_2px_10px_rgba(0,0,0,0.18)] ring-[3px] ring-white/25 transition duration-300 hover:-translate-y-1 hover:scale-[1.06] hover:bg-[#20bd5c] hover:shadow-[0_12px_36px_rgba(37,211,102,0.55),0_4px_14px_rgba(0,0,0,0.22)] hover:ring-white/40 active:scale-100 focus-visible:ring-4 focus-visible:ring-[#25D366] focus-visible:ring-offset-4 focus-visible:ring-offset-slate-50 ${
+        footerInView
+          ? 'pointer-events-none scale-90 opacity-0'
+          : 'opacity-100'
+      }`}
     >
       <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 transition duration-300 group-hover:opacity-100" />
       <WhatsAppIcon className="relative h-[1.85rem] w-[1.85rem] drop-shadow-sm transition duration-300 group-hover:scale-105" />
