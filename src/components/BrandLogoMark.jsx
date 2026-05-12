@@ -1,6 +1,6 @@
 const variants = {
-  /* Caixa no fluxo compacta; scale amplia só o desenho (header mantém min/max-height). */
-  nav: 'h-11 w-auto max-h-11 shrink-0 origin-left object-contain will-change-transform scale-[1.52] sm:scale-[1.62]',
+  /* Ocupa a altura útil da barra (entre os py-4); nav usa items-stretch + self-stretch no link. */
+  nav: 'h-full max-h-full w-auto min-h-0 shrink-0 self-stretch object-contain',
   hero: 'h-28 w-28 shrink-0 object-contain sm:h-32 sm:w-32 lg:h-36 lg:w-36',
   footer: 'h-14 w-14 shrink-0 object-contain sm:h-16 sm:w-16',
 }
