@@ -67,21 +67,21 @@ function Hero({ logoUrl, whatsappUrl }) {
 
         <div className="animate-fade-up rounded-4xl border border-white/70 bg-white/80 p-5 shadow-2xl shadow-emerald-950/10 backdrop-blur lg:p-7">
           <div className="rounded-3xl bg-[#064E3B] p-6 text-white shadow-xl shadow-emerald-950/20">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-transparent">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-5">
+                <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-transparent sm:h-36 sm:w-36 lg:h-40 lg:w-40">
                   <img
                     src={logoUrl}
                     alt="Logo da DG Contabilidade"
-                    className="h-16 w-16 object-contain drop-shadow-md"
+                    className="h-32 w-32 object-contain drop-shadow-md sm:h-36 sm:w-36 lg:h-40 lg:w-40"
                   />
                 </div>
-                <div>
+                <div className="min-w-0 text-center sm:text-left">
                   <p className="text-sm text-emerald-100">Painel contábil</p>
                   <p className="mt-1 text-2xl font-bold">DG Contabilidade</p>
                 </div>
               </div>
-              <div className="hidden h-12 w-12 place-items-center rounded-2xl bg-white/15 sm:grid">
+              <div className="hidden h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/15 sm:grid">
                 <BarChart3 aria-hidden="true" className="h-6 w-6" />
               </div>
             </div>

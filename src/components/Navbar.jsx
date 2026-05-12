@@ -24,11 +24,11 @@ function Navbar({ logoUrl, whatsappUrl }) {
           onClick={closeMenu}
           className="flex items-center gap-3 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
         >
-          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-transparent">
+          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-transparent sm:h-20 sm:w-20">
             <img
               src={logoUrl}
               alt=""
-              className="h-12 w-12 object-contain drop-shadow-sm"
+              className="h-16 w-16 object-contain drop-shadow-sm sm:h-20 sm:w-20"
             />
           </span>
           <span className="text-lg font-bold tracking-tight text-[#064E3B]">
