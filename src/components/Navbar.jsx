@@ -24,11 +24,11 @@ function Navbar({ logoUrl, whatsappUrl }) {
           onClick={closeMenu}
           className="flex items-center gap-3 rounded-full focus-visible:ring-2 focus-visible:ring-[#064E3B] focus-visible:ring-offset-4"
         >
-          <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-2xl bg-slate-950 shadow-lg shadow-emerald-950/20 ring-1 ring-emerald-950/10">
+          <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full bg-gradient-to-br from-slate-50 to-white shadow-md shadow-emerald-950/10 ring-1 ring-slate-200/90">
             <img
               src={logoUrl}
               alt=""
-              className="h-full w-full scale-125 object-cover object-center"
+              className="h-full w-full object-contain p-1.5"
             />
           </span>
           <span className="text-lg font-bold tracking-tight text-[#064E3B]">
