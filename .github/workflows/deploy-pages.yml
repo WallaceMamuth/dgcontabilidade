@@ -1,3 +1,6 @@
+# Publica o build (pasta dist) no GitHub Pages.
+# Primeira vez: no repositório, vá em Settings → Pages → Build and deployment
+# → Source → GitHub Actions. Sem isso, o job falha com "Get Pages site failed".
 name: Deploy to GitHub Pages
 
 on:
