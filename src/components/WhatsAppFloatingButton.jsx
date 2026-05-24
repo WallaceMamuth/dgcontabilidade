@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const FOOTER_OBSERVE_ID = 'contato'
+const FOOTER_OBSERVE_ID = 'rodape-contato'
 
 function WhatsAppIcon({ className }) {
   return (
@@ -39,7 +39,7 @@ function WhatsAppFloatingButton({ href }) {
       target="_blank"
       rel="noreferrer"
       title="WhatsApp"
-      aria-label="Fale com a DG Contabilidade pelo WhatsApp"
+      aria-label="Fale com a W.A.Techevoce Contabilidade pelo WhatsApp"
       aria-hidden={footerInView}
       tabIndex={footerInView ? -1 : undefined}
       className={`group fixed bottom-5 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_30px_rgba(37,211,102,0.45),0_2px_10px_rgba(0,0,0,0.18)] ring-[3px] ring-white/25 transition duration-300 hover:-translate-y-1 hover:scale-[1.06] hover:bg-[#20bd5c] hover:shadow-[0_12px_36px_rgba(37,211,102,0.55),0_4px_14px_rgba(0,0,0,0.22)] hover:ring-white/40 active:scale-100 focus-visible:ring-4 focus-visible:ring-[#25D366] focus-visible:ring-offset-4 focus-visible:ring-offset-slate-50 ${
