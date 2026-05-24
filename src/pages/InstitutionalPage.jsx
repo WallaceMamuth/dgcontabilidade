@@ -50,8 +50,8 @@ function InstitutionalPage() {
             </p>
             <p>
               Atuamos com squads enxutos, combinando tecnologias próprias, checklists atualizados e
-              atendimento humano — inclusive presencial sempre que necessário em Salvador ou regiões
-              atendidas com logística combinada previamente.
+              atendimento humano — com presencial em Saquarema (RJ), região dos Lagos, quando
+              combinado previamente, e modelo híbrido para outras localidades quando fizer sentido.
             </p>
             <blockquote className="rounded-3xl border border-emerald-900/15 bg-emerald-50/60 px-8 py-6 text-xl font-semibold leading-snug text-[#064E3B]">
               “Credibilidade tributária se constrói com consistência mensal.”

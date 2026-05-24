@@ -13,13 +13,9 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
   WHATSAPP_PREFILL_MESSAGE,
 )}`
 
-export const CONTACT_EMAIL = 'denilsongcontabilidade@gmail.com'
+export const CONTACT_EMAIL = 'contato@watechevoce.com.br'
 
 /** Site e presença oficial na web. */
 export const WEBSITE_URL = 'https://www.watechevoce.com.br'
 
-export const ADDRESS_LINES = [
-  'Rua Freitas Henrique de Cima nº 07',
-  '3ª Travessa - Caixa D\'Água - Salvador/BA',
-  'CEP 40320-150',
-]
+export const ADDRESS_LINES = ['Jaconé Centro', 'Saquarema/RJ']

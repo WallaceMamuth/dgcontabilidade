@@ -25,8 +25,8 @@ function Hero({ whatsappUrl }) {
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
             A {SITE_NAME} combina método, transparência e proximidade para
-            apoiar empreendedores, empresas e profissionais em Salvador e em
-            regimes digitais (e-CAC / e-processos / e-social).
+            apoiar empreendedores, empresas e profissionais em Saquarema, região dos Lagos/RJ,
+            também em regimes digitais (e-CAC / e-processos / eSocial).
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -87,7 +87,7 @@ function Hero({ whatsappUrl }) {
               {[
                 ['Empresas acompanhadas', '+120'],
                 ['Primeira resposta', 'até 24h úteis'],
-                ['Expertise regional', 'Salvador / BA'],
+                ['Expertise regional', 'Saquarema / RJ'],
               ].map(([label, value]) => (
                 <div
                   key={label}
